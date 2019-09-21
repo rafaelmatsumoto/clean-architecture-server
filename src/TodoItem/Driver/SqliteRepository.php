@@ -20,12 +20,12 @@ class SqliteRepository implements RepositoryInterface
 
     public function find(int $id) : TodoItem
     {
-        $result = $this->conn->query("SELECT * FROM todos where id =$id");
+        $result = $this->conn->query("SELECT * FROM todos where id =$id")->fetch();
         $todoItem = new TodoItem;
-        $todoItem->id = $m[0]['id'];
-        $todoItem->title = $m[0]['title'];
-        $todoItem->done = $m[0]['done'];
-        $todoItem->createdAt = $m[0]['created_at'];
+        $todoItem->id = $result['id'];
+        $todoItem->title = $result['title'];
+        $todoItem->done = $result['done'];
+        $todoItem->createdAt = $result['created_at'];
         return $todoItem;
     }
 

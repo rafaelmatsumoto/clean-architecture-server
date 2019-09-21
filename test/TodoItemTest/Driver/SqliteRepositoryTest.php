@@ -55,6 +55,11 @@ class SqliteRepositoryTest extends TestCase
 
     public function testFindSingleTodo()
     {
+        $b = new TodoItem;
+        $b->title = 'Walk with the dog';
+        $b->done = 0;
+        $b->createdAt = new \Datetime();
+        $this->repo->store($b);
         $firstTodo = $this->repo->find(1);
         $this->assertEquals(1, $firstTodo->id);
     }

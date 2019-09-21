@@ -18,6 +18,11 @@ class Service implements UseCaseInterface
         return $this->repository->search($query);
     }
 
+    public function find(int $id)
+    {
+        return $this->repository->find($id);
+    }
+
     public function findAll()
     {
         return $this->repository->findAll();
