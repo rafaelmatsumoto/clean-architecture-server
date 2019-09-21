@@ -53,6 +53,12 @@ class SqliteRepositoryTest extends TestCase
         $this->assertEquals(2, $all[1]->id);
     }
 
+    public function testFindSingleTodo()
+    {
+        $firstTodo = $this->repo->find(1);
+        $this->assertEquals(1, $firstTodo->id);
+    }
+
     public function testDelete()
     {
         $b = new TodoItem;
