@@ -16,7 +16,7 @@ class SqliteRepositoryFactoryTest extends TestCase
     {
         $config = [
             'db' => [
-                'dsn' => 'sqlite:data/bookmark.sqlite3',
+                'dsn' => 'sqlite:data/todos.sqlite3',
             ],
         ];
         $this->container = $this->prophesize(ContainerInterface::class);

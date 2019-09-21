@@ -42,6 +42,18 @@ class ServiceTest extends TestCase
         $this->assertEquals(1, $firstTodo->id);
     }
 
+    public function testSearchAndFindNone()
+    {
+        $b = new TodoItem;
+        $b->title = 'Walk with the dog';
+        $b->done = 0;
+        $b->createdAt = new \Datetime();
+        $id = $this->service->store($b);
+        
+        $s1 = $this->service->search('None');
+        $this->assertEquals(null, $s1);
+    }
+
     public function testSearchAndFindAll()
     {
         $b = new TodoItem;
