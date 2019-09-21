@@ -31,6 +31,17 @@ class ServiceTest extends TestCase
         $this->assertEquals(1, $id);
     }
 
+    public function testFindSingleTodo()
+    {
+        $b = new TodoItem;
+        $b->title = 'Walk with the dog';
+        $b->done = 0;
+        $b->createdAt = new \Datetime();
+        $this->service->store($b);
+        $firstTodo = $this->service->find(1);
+        $this->assertEquals(1, $firstTodo->id);
+    }
+
     public function testSearchAndFindAll()
     {
         $b = new TodoItem;
