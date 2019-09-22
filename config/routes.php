@@ -34,7 +34,6 @@ use Zend\Expressive\MiddlewareFactory;
  */
 return function (Application $app, MiddlewareFactory $factory, ContainerInterface $container) : void {
     $app->get('/v1/ping', App\Handler\PingHandler::class, 'api.ping');
-    $app->get('/v1/todos', TodoItem\Controller\IndexHandler::class, 'todoitem.index');
-    $app->post('/v1/todos', TodoItem\Controller\PostHandler::class, 'todoitem.post');
-    $app->delete('/v1/todos', TodoItem\Controller\DeleteHandler::class, 'todoitem.delete');
+    $app->get('/api/todos', TodoItem\Controller\IndexHandler::class, 'todoitem.index');
+    $app->post('/api/todos', TodoItem\Controller\PostHandler::class, 'todoitem.post');
 };
