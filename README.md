@@ -1,4 +1,6 @@
-<h1 align="center">Welcome to clean-architecture-php 👋</h1>
+[![Build Status](https://travis-ci.com/rafaelmatsumoto/clean-architecture-php.svg?token=epmMNVLLvizSuJ7VzAhz&branch=master)](https://travis-ci.com/rafaelmatsumoto/clean-architecture-php)
+
+<h1 align="center">Arquitetura Limpa 👋</h1>
 <p>
 </p>
 
