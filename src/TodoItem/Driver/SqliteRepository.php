@@ -44,7 +44,7 @@ class SqliteRepository implements RepositoryInterface
     public function findAll()
     {
         $all = [];
-        $result = $this->conn->query('SELECT * FROM todos');
+        $result = $this->conn->query('SELECT * FROM todos ORDER BY created_at DESC');
         foreach ($result as $m) {
                 $todoItem = new TodoItem;
                 $todoItem->id = $m['id'];
