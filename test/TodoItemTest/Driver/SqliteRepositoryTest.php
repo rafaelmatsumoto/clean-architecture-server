@@ -24,7 +24,6 @@ class SqliteRepositoryTest extends TestCase
     {
         $b = new TodoItem;
         $b->title = 'Walk with the dog';
-        $b->done = 0;
         $b->createdAt = new \Datetime();
 
         $id = $this->repo->store($b);
@@ -35,7 +34,6 @@ class SqliteRepositoryTest extends TestCase
     {
         $b = new TodoItem;
         $b->title = 'Walk with the dog';
-        $b->done = 0;
         $b->createdAt = new \Datetime();
 
         $b2 = new TodoItem;
@@ -57,7 +55,6 @@ class SqliteRepositoryTest extends TestCase
     {
         $b = new TodoItem;
         $b->title = 'Walk with the dog';
-        $b->done = 0;
         $b->createdAt = new \Datetime();
         $this->repo->store($b);
         $firstTodo = $this->repo->find(1);
@@ -68,7 +65,6 @@ class SqliteRepositoryTest extends TestCase
     {
         $b = new TodoItem;
         $b->title = 'Walk with the dog';
-        $b->done = 0;
         $b->createdAt = new \Datetime();
 
         $b2 = new TodoItem;

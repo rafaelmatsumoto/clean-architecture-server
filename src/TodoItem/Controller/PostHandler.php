@@ -25,7 +25,6 @@ class PostHandler implements RequestHandlerInterface
         $data = $request->getParsedBody();
         $todoItem = new TodoItem();
         $todoItem->title = $data['title'];
-        $todoItem->done = $data['done'];
         $todoItem->id = $this->service->store($todoItem);
         return new JsonResponse($todoItem);
     }

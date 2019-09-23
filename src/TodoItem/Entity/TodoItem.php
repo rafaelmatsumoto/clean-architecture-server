@@ -7,6 +7,5 @@ class TodoItem
 {
     public $id;
     public $title;
-    public $done;
     public $createdAt;
 }

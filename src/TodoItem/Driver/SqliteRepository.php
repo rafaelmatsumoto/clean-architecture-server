@@ -14,7 +14,6 @@ class SqliteRepository implements RepositoryInterface
         $this->conn->exec("CREATE TABLE IF NOT EXISTS todos (
                     id INTEGER PRIMARY KEY, 
                     title TEXT, 
-                    done INTEGER DEFAULT 0,
                     created_at integer)");
     }
 
@@ -24,7 +23,6 @@ class SqliteRepository implements RepositoryInterface
         $todoItem = new TodoItem;
         $todoItem->id = $result['id'];
         $todoItem->title = $result['title'];
-        $todoItem->done = $result['done'];
         $todoItem->createdAt = $result['created_at'];
         return $todoItem;
     }
@@ -37,7 +35,6 @@ class SqliteRepository implements RepositoryInterface
             $todoItem = new TodoItem;
             $todoItem->id = $m['id'];
             $todoItem->title = $m['title'];
-            $todoItem->done = $m['done'];
             $todoItem->createdAt = $m['created_at'];
             $all[] = $todoItem;
         }
@@ -52,7 +49,6 @@ class SqliteRepository implements RepositoryInterface
                 $todoItem = new TodoItem;
                 $todoItem->id = $m['id'];
                 $todoItem->title = $m['title'];
-                $todoItem->done = $m['done'];
                 $todoItem->createdAt = $m['created_at'];
                 $all[] = $todoItem;
         }
@@ -62,9 +58,8 @@ class SqliteRepository implements RepositoryInterface
     public function store(TodoItem $todoItem): int
     {
         $todoItem->createdAt = $todoItem->createdAt->getTimeStamp();
-        $stmt = $this->conn->prepare('insert into todos (title, done, created_at) values (:title, :done, :created_at)');
+        $stmt = $this->conn->prepare('insert into todos (title, created_at) values (:title, :created_at)');
         $stmt->bindParam(':title',$todoItem->title);
-        $stmt->bindParam(':done', $todoItem->done);
         $stmt->bindParam(':created_at', $todoItem->createdAt);
         $stmt->execute();
         return $this->conn->lastInsertId();
