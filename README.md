@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/rafaelmatsumoto/clean-architecture-php.svg?token=epmMNVLLvizSuJ7VzAhz&branch=master)](https://travis-ci.com/rafaelmatsumoto/clean-architecture-php)
+[![Build Status](https://travis-ci.com/rafaelmatsumoto/clean-architecture-server.svg?token=epmMNVLLvizSuJ7VzAhz&branch=master)](https://travis-ci.com/rafaelmatsumoto/clean-architecture-server)
 
 <h1 align="center">Arquitetura Limpa 👋</h1>
 <p>
