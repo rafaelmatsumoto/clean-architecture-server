@@ -78,6 +78,10 @@ composer serve
 composer test
 ```
 
+## Referências
+
+- [Wiki](https://github.com/rafaelmatsumoto/clean-architecture-server/wiki)
+
 ## Author
 
 👤 **Dayan Freitas | Rafael Stein Matsumoto | Israel Cadorin**
